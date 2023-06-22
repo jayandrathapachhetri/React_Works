@@ -1,11 +1,40 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const EmpCreate = () => {
+  const [id] = useState("");
+  const [name, namechange] = useState("");
+  const [email, emailchange] = useState("");
+  const [phone, phonechange] = useState("");
+  const [active, activechange] = useState(true);
+  const [namevalidation, valnamechange] = useState(false);
+  const [emailvalidation, valemailchange] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handlesubmit = (e) => {
+    e.preventDefault();
+    const empdata = { name, email, phone, active };
+
+    fetch("http://localhost:3000/employee", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(empdata),
+    })
+      .then((res) => {
+        alert("Saved successfully.");
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
+
   return (
     <div>
       <div className="row">
         <div className="offset-lg-3 col-lg-6">
-          <form className="container">
+          <form className="container" onSubmit={handlesubmit}>
             <div className="card" style={{ textAlign: "left" }}>
               <div className="card-title">
                 <h2>Employee Create</h2>
@@ -15,38 +44,65 @@ const EmpCreate = () => {
                   <div className="col-lg-12">
                     <div className="form-group">
                       <label>ID</label>
-                      <input className="form-control"></input>
+                      <input
+                        value={id}
+                        disabled="disabled"
+                        className="form-control"
+                      ></input>
                     </div>
                   </div>
 
                   <div className="col-lg-12">
                     <div className="form-group">
                       <label>Name</label>
-                      <input className="form-control"></input>
+                      <input
+                        required
+                        value={name}
+                        onMouseDown={(e) => valnamechange(true)}
+                        onChange={(e) => namechange(e.target.value)}
+                        className="form-control"
+                      ></input>
+                      {name.length === 0 && namevalidation && (
+                        <span className="text-danger">Enter the valid name</span>
+                      )}
                     </div>
                   </div>
 
                   <div className="col-lg-12">
                     <div className="form-group">
                       <label>Email</label>
-                      <input className="form-control"></input>
+                      <input
+                        value={email}
+                        onMouseDown={(e) => valemailchange(true)}
+                        onChange={(e) => emailchange(e.target.value)}
+                        className="form-control"
+                      ></input>
+                      {email.length === 0 && emailvalidation && (<span className="text-danger"> Enter the vaild email </span>)}
                     </div>
                   </div>
 
                   <div className="col-lg-12">
                     <div className="form-group">
                       <label>Phone</label>
-                      <input className="form-control"></input>
+                      <input
+                        value={phone}
+                        onChange={(e) => phonechange(e.target.value)}
+                        className="form-control"
+                      ></input>
                     </div>
                   </div>
 
                   <div className="col-lg-12">
                     <div className="form-check">
-                      <input className="form-check-input"></input>
+                      <input
+                        checked={active}
+                        onChange={(e) => activechange(e.target.checked)}
+                        type="checkbox"
+                        className="form-check-input"
+                      ></input>
                       <label className="form-check-label">Is Active</label>
                     </div>
                   </div>
-
                   <div className="col-lg-12">
                     <div className="form-group">
                       <button className="btn btn-success" type="submit">
