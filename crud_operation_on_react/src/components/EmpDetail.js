@@ -7,7 +7,7 @@ const EmpDetail = () => {
   const [empdata, empdatachange] = useState({});
 
   useEffect(() => {
-    fetch("http://localhost:3000/employee/" + empid)
+    fetch("http://localhost:3000/employee/" +empid)
       .then((res) => {
         return res.json();
       })

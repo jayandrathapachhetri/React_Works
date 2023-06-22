@@ -2,54 +2,56 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 const EmpEdit = () => {
-    const { empid } = useParams();
+  const { empid } = useParams();
 
-    //const [empdata, empdatachange] = useState({});
+  //const [empdata, empdatachange] = useState({});
 
-    useEffect(() => {
-        fetch("http://localhost:3000/employee/" + empid).then((res) => {
-            return res.json();
-        }).then((resp) => {
-            idchange(resp.id);
-            namechange(resp.name);
-            emailchange(resp.email);
-            phonechange(resp.phone);
-            activechange(resp.isactive);
-        }).catch((err) => {
-            console.log(err.message);
-        })
-    }, [empid]);
-
-    const[id,idchange]=useState("");
-    const[name,namechange]=useState("");
-    const[email,emailchange]=useState("");
-    const[phone,phonechange]=useState("");
-    const[active,activechange]=useState(true);
-    const[namevalidation,valnamechange]=useState(false);
-    const[emailvalidation,valemailchange]=useState(false);
-
-
-    const navigate=useNavigate();
-
-    const handlesubmit=(e)=>{
-      e.preventDefault();
-      const empdata={id,name,email,phone,active};
-      
-
-      fetch("http://localhost:3000/employee/"+empid,{
-        method:"PUT",
-        headers:{"content-type":"application/json"},
-        body:JSON.stringify(empdata)
-      }).then((res)=>{
-        alert('Update successfully.')
-        navigate('/');
-      }).catch((err)=>{
-        console.log(err.message)
+  useEffect(() => {
+    fetch("http://localhost:3000/employee/"+empid)
+      .then((res) => {
+        return res.json();
       })
+      .then((resp) => {
+        idchange(resp.id);
+        namechange(resp.name);
+        emailchange(resp.email);
+        phonechange(resp.phone);
+        activechange(resp.isactive);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, [empid]);
 
-    }
-    return ( 
-<div>
+  const [id, idchange] = useState("");
+  const [name, namechange] = useState("");
+  const [email, emailchange] = useState("");
+  const [phone, phonechange] = useState("");
+  const [active, activechange] = useState(true);
+  const [namevalidation, valnamechange] = useState(false);
+  const [emailvalidation, valemailchange] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handlesubmit = (e) => {
+    e.preventDefault();
+    const empdata = { id, name, email, phone, active };
+
+    fetch("http://localhost:3000/employee/"+empid, {
+      method: "PUT",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(empdata),
+    })
+      .then((res) => {
+        alert("Update successfully.");
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
+  return (
+    <div>
       <div className="row">
         <div className="offset-lg-3 col-lg-6">
           <form className="container" onSubmit={handlesubmit}>
@@ -80,8 +82,10 @@ const EmpEdit = () => {
                         onChange={(e) => namechange(e.target.value)}
                         className="form-control"
                       ></input>
-                      {name.length === 0 && namevalidation && (
-                        <span className="text-danger">Enter the valid name</span>
+                      {name && name.length === 0 && namevalidation && (
+                        <span className="text-danger">
+                          Enter the valid name
+                        </span>
                       )}
                     </div>
                   </div>
@@ -95,7 +99,12 @@ const EmpEdit = () => {
                         onChange={(e) => emailchange(e.target.value)}
                         className="form-control"
                       ></input>
-                      {email.length === 0 && emailvalidation && (<span className="text-danger"> Enter the vaild email </span>)}
+                      {email && email.length === 0 && emailvalidation && (
+                        <span className="text-danger">
+                          {" "}
+                          Enter the vaild email{" "}
+                        </span>
+                      )}
                     </div>
                   </div>
 
@@ -138,7 +147,7 @@ const EmpEdit = () => {
         </div>
       </div>
     </div>
-     );
-}
- 
+  );
+};
+
 export default EmpEdit;

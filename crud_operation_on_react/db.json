@@ -1,23 +1,18 @@
 {
   "employee": [
     {
-      "id": 1,
-      "name": "Jay Thapa",
+      "name": "Jayandra Thapa",
       "email": "jay@test.com",
-      "phone": "9818173031"
-    },
-    {
-      "id": 2,
-      "name": "Surendra ",
-      "email": "surendrathapa@test.",
-      "phone": "9861882736"
-    },
-    {
-      "name": "Durga Thapa",
-      "email": "durgathapa@test.com",
-      "phone": "9818173031",
+      "phone": "9863467790",
       "active": true,
-      "id": 3
+      "id": 1
+    },
+    {
+      "name": "Surendra Thapa",
+      "email": "surendrathapa@test.com",
+      "phone": "9861882726",
+      "active": true,
+      "id": 2
     }
   ]
 }

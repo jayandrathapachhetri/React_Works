@@ -1,21 +1,35 @@
 import { useEffect, useState } from "react";
-import { Link , useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import "./App.css";
 
 const EmpListing = () => {
   const [empdata, empdatachange] = useState(null);
   const navigate = useNavigate();
 
-  const LoadDetail = (id) => {
-    navigate("/employee/detail/" +id);
-  }
+  // href is use so no need of navigate 
+  // const LoadDetail = (id) => {
+  //   navigate("/employee/detail/" +id);
+  // };
 
-  const LoadEdit = (id) => {
-    navigate("/employee/edit/" +id);
-}
+  // const LoadEdit = (id) => {
+  //   navigate("/employee/edit/" +id);
+  // };
 
-const Removefunction = (id) => {
-}
+  const Removefunction = (id) => {
+    if (window.confirm("Do you want to remove?")) {
+      fetch("http://localhost:3000/employee/" +id, {
+        method: "DELETE",
+      })
+        .then((res) => {
+          alert("Removed successfully.");
+          //refreah our page
+          window.location.reload();
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+    }
+  };
 
   useEffect(() => {
     fetch(`http://localhost:3000/employee`)
@@ -60,15 +74,14 @@ const Removefunction = (id) => {
                     <td>{item.email}</td>
                     <td>{item.phone}</td>
                     <td>
-                      <a href="edit"
-                        onClick={() => {
-                          LoadEdit(item.id);
-                        }}
+                      <a
+                        href={"employee/edit/"+item.id}
                         className="btn btn-success"
                       >
                         Edit
                       </a>
-                      <a href="remove"
+                      <a
+                        // href="remove"
                         onClick={() => {
                           Removefunction(item.id);
                         }}
@@ -76,10 +89,8 @@ const Removefunction = (id) => {
                       >
                         Remove
                       </a>
-                      <a href="detail"
-                        onClick={() => {
-                          LoadDetail(item.id);
-                        }}
+                      <a
+                         href={"employee/detail/"+item.id}
                         className="btn btn-primary"
                       >
                         Detail
