@@ -4,14 +4,13 @@
       "id": 1,
       "name": "Jay Thapa",
       "email": "jay@test.com",
-      "phone": "9863467790"
+      "phone": "9818173031"
     },
     {
-      "name": "Surendra Thapa",
-      "email": "surendrathapa@test.com",
-      "phone": "9861882726",
-      "active": true,
-      "id": 2
+      "id": 2,
+      "name": "Surendra ",
+      "email": "surendrathapa@test.",
+      "phone": "9861882736"
     },
     {
       "name": "Durga Thapa",
