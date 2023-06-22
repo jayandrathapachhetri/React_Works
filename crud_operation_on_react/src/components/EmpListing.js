@@ -1,9 +1,22 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 // import "./App.css";
 
 const EmpListing = () => {
   const [empdata, empdatachange] = useState(null);
+  const navigate = useNavigate();
+
+  const LoadDetail = (id) => {
+    navigate("/employee/detail/" + id);
+  }
+
+  const LoadEdit = (id) => {
+    navigate("/employee/edit/" + id);
+}
+
+const Removefunction = (id) => {
+}
+
   useEffect(() => {
     fetch(`http://localhost:3000/employee`)
       .then((res) => {
@@ -47,13 +60,28 @@ const EmpListing = () => {
                     <td>{item.email}</td>
                     <td>{item.phone}</td>
                     <td>
-                      <a href="edit" className="btn btn-success">
+                      <a href="edit"
+                        onClick={() => {
+                          LoadEdit(item.id);
+                        }}
+                        className="btn btn-success"
+                      >
                         Edit
                       </a>
-                      <a href="remove" className="btn btn-danger">
+                      <a href="remove"
+                        onClick={() => {
+                          Removefunction(item.id);
+                        }}
+                        className="btn btn-danger"
+                      >
                         Remove
                       </a>
-                      <a href="details" className="btn btn-primary">
+                      <a href="details"
+                        onClick={() => {
+                          LoadDetail(item.id);
+                        }}
+                        className="btn btn-primary"
+                      >
                         Details
                       </a>
                     </td>
