@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+// import "./App.css";
 
 const EmpListing = () => {
   const [empdata, empdatachange] = useState(null);
   useEffect(() => {
-    fetch( `http://localhost:3000/employee`)
+    fetch(`http://localhost:3000/employee`)
       .then((res) => {
         return res.json();
       })
@@ -21,7 +23,11 @@ const EmpListing = () => {
           <h2>Employee Listing</h2>
         </div>
         <div className="card-body">
-          <div className="btn btn-success"> Add New (+)</div>
+          <div className="divbtn">
+            <Link to="employee/create" className="btn btn-success">
+              Add New (+)
+            </Link>
+          </div>
           <table className="table table-bordered">
             <thead className="bg-dark text-white">
               <tr>
