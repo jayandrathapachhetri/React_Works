@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const EmpCreate = () => {
   return (
     <div>
@@ -42,6 +44,17 @@ const EmpCreate = () => {
                     <div className="form-check">
                       <input className="form-check-input"></input>
                       <label className="form-check-label">Is Active</label>
+                    </div>
+                  </div>
+
+                  <div className="col-lg-12">
+                    <div className="form-group">
+                      <button className="btn btn-success" type="submit">
+                        Save
+                      </button>
+                      <Link to="/" className="btn btn-danger">
+                        Back
+                      </Link>
                     </div>
                   </div>
                 </div>
