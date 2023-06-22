@@ -7,11 +7,11 @@ const EmpListing = () => {
   const navigate = useNavigate();
 
   const LoadDetail = (id) => {
-    navigate("/employee/detail/" + id);
+    navigate("/employee/detail/" +id);
   }
 
   const LoadEdit = (id) => {
-    navigate("/employee/edit/" + id);
+    navigate("/employee/edit/" +id);
 }
 
 const Removefunction = (id) => {
@@ -76,13 +76,13 @@ const Removefunction = (id) => {
                       >
                         Remove
                       </a>
-                      <a href="details"
+                      <a href="detail"
                         onClick={() => {
                           LoadDetail(item.id);
                         }}
                         className="btn btn-primary"
                       >
-                        Details
+                        Detail
                       </a>
                     </td>
                   </tr>
