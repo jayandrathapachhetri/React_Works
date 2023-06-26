@@ -13,6 +13,26 @@
       "phone": "9861882726",
       "active": true,
       "id": 2
+    },
+    {
+      "name": "Durga Thapa",
+      "email": "durgathapa@test.com",
+      "phone": "9863451278",
+      "active": true,
+      "id": 3
+    },
+    {
+      "id": 4,
+      "name": "ss",
+      "email": "dddd",
+      "phone": "gggggggggg"
+    },
+    {
+      "name": "ss",
+      "email": "ddd",
+      "phone": "9866",
+      "active": true,
+      "id": 5
     }
   ]
 }

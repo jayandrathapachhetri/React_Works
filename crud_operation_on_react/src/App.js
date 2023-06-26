@@ -5,6 +5,7 @@ import EmpListing from './components/EmpListing';
 import EmpCreate from './components/EmpCreate';
 import EmpDetail from './components/EmpDetail';
 import EmpEdit from './components/EmpEdit';
+// import ImageGallery from './components/ImageGallery';
 
 function App() {
   return (
