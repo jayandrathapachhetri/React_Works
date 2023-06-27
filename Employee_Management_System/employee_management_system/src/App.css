@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* Employee Management System */
+*{
+  margin: 0%;
+  padding: 0%;
+}
+
+
+.header{
+  text-align: right;
+}
+
+.header li{
+  display: inline-block;
+  padding: 10px;
+}
