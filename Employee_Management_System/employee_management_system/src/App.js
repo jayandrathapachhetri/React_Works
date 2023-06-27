@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignUp from "./components/SignUp";
 import LogIn from "./components/LogIn";
 import Home from "./components/Home";
+import Protected from "./components/Protected";
 import Header from "./components/Header";
 import About from "./components/About";
 import Edit from "./components/Edit";
@@ -16,12 +17,12 @@ function App() {
         <Header />
         <Routes>
           <Route SignUp />
-          <Route path="/" element={<Home />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/" element={< Protected Component = {Home} />} />
+          <Route path="/signup" element={<Protected Component = {SignUp} />} />
           <Route path="/login" element={<LogIn />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/edit" element={<Edit />} />
-          <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/about" element={<Protected Component = {About} />} />
+          <Route path="/edit" element={<Protected Component = {Edit} />} />
+          <Route path="/contactus" element={<Protected Component = {ContactUs} />} />
         </Routes>
       </BrowserRouter>
     </div>
