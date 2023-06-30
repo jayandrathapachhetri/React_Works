@@ -52,6 +52,12 @@
   padding: 0%;
 }
 
+/* body {
+  background-image: url('.jpg');
+  background-size: cover;
+  background-position: center;
+} */
+
 
 .header{
   text-align: right;
@@ -63,8 +69,9 @@
 }
 
 .loginPage, .signupPage {
-  background-color: gray;
-  /* background: url('..profile.jpg'); */
+  background-color: rgb(7, 75, 100);
+  /* background: url('/Images/cover.jpg'); */
+  /* background: url('Images/cover.jpg'); */
   background: linear-gradient(rgba(11, 11, 11, 0.5), rgba(10, 10, 10, 0.5)),;
   background-position: center;
   background-repeat: no-repeat;
