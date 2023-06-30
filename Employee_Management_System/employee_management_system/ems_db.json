@@ -1,0 +1,58 @@
+{
+  "employee": [
+    {
+      "id": 1,
+      "name": "Jay Thapa",
+      "email": "jay@test.com",
+      "phone": "ffff"
+    },
+    {
+      "name": "Dhan Bahadur Thapa",
+      "email": "dhan@test.com",
+      "password": "dhan@123",
+      "id": 2
+    },
+    {
+      "name": "New Cafe",
+      "email": "chhetri5518jayandrathapa@gmail.com",
+      "password": "aaa",
+      "id": 3
+    },
+    {
+      "name": "images",
+      "email": "surendrathapa@gmail.com",
+      "password": "sss",
+      "id": 4
+    },
+    {
+      "name": "sss",
+      "email": "xx",
+      "password": "ww",
+      "id": 5
+    },
+    {
+      "name": "sushil",
+      "email": "rai@gmail.com",
+      "password": "sss",
+      "id": 6
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 7
+    },
+    {
+      "name": "ddss",
+      "email": "ww",
+      "password": "ddd",
+      "id": 8
+    },
+    {
+      "name": "dds",
+      "email": "dd",
+      "password": "dd",
+      "id": 9
+    }
+  ]
+}

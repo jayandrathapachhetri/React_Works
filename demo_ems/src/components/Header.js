@@ -3,10 +3,11 @@ import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
 
 
+
 function Header() {
   const navigate = useNavigate();
   return (
-<div className="Header" style={{ display: 'flex',justifyContent: "center", alignItems: 'center' }}>
+<div className="Header" style={{ display: 'flex',justifyContent: "center", alignItems: 'center', backgroundColor:"gray" }}>
       <ul className="header">
         <li>
           <Link to="/">Home</Link>
@@ -15,7 +16,7 @@ function Header() {
           <Link to="/about">About</Link>
         </li>
         <li>
-          <Link to="/edit">Edit</Link>
+          <Link to="/emplist">List</Link>
         </li>
         <li>
           <Link to="/Contactus">ContactUs</Link>
@@ -30,3 +31,4 @@ function Header() {
 }
 
 export default Header;
+
