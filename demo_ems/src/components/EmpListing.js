@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link} from "react-router-dom";
+// import Images from './Images/cover.jpg'
+// import Images from './'
 // import "./App.css";
 // import ImageGallery from './components/ImageGallery';
+
+
 
 
 const EmpListing = () => {
@@ -45,6 +49,8 @@ const EmpListing = () => {
         console.log(err.message);
       });
   }, []);
+
+
   return (
     <div className="container">
       <div className="card">
@@ -62,6 +68,7 @@ const EmpListing = () => {
               <tr>
                 <td>ID</td>
                 <td>Name</td>
+                {/* <td>Image</td> */}
                 <td>Email</td>
                 <td>Phone</td>
                 <td>Action</td>
@@ -73,6 +80,7 @@ const EmpListing = () => {
                   <tr key={item.id}>
                     <td>{item.id}</td>
                     <td>{item.name}</td>
+                    {/* <td><img src={Image} alt={""} /></td> */}
                     <td>{item.email}</td>
                     <td>{item.phone}</td>
                     <td>

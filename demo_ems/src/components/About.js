@@ -1,11 +1,13 @@
-import React from 'react';
+import React from 'react'
+import Header from "./Header";
 
 function About() {
-    return (
-        <div className="About">
-          <h1>About</h1>
-        </div>
-      );
+  return (
+    <div>
+        <Header/>
+      <h1>about</h1>
+    </div>
+  )
 }
 
-export default About;
+export default About

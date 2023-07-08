@@ -1,0 +1,13 @@
+{
+  "employee": [
+    {
+      "id": 1,
+      "name": "Jay Thapa",
+      "email": "jay@test.com",
+      "password": "jay@123",
+      "address": "ktm",
+      "salary": "75000",
+      "image": ""
+    }
+  ]
+}

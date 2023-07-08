@@ -1,29 +1,35 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import "../App.css";
+import { Link } from "react-router-dom";
+import "./App.css";
 
 
 function Header() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
-<div className="Header" style={{ display: 'flex',justifyContent: "center", alignItems: 'center' }}>
-      <ul className="header">
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/edit">Edit</Link>
-        </li>
-        <li>
-          <Link to="/Contactus">ContactUs</Link>
-        </li>
-      </ul>
-
-      <div className="logout">
-      <button onClick={() => navigate("/login")}>LOG OUT</button>
+    <div id="header">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-4">
+            <h1 id="logo">Company Name</h1>
+          </div>
+          <div className=" col-md-8">
+            <ul id="menu" className="float-md-right">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+              <Link to="/about">About</Link>
+              </li>
+              <li>
+              <Link to="/service">Service</Link>
+              </li>
+              <li>
+              <Link to="/contactus">ContactUs</Link>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );

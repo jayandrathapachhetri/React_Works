@@ -1,0 +1,52 @@
+{
+  "register": [
+    {
+      "name": "Jay Thapa",
+      "email": "jay@test.com",
+      "password": "jay@t123",
+      "id": 1
+    },
+    {
+      "name": "Surendra Thapa",
+      "email": "surendra@test.com",
+      "password": "surendra@123",
+      "id": 2
+    },
+    {
+      "name": "Jay Thapa",
+      "email": "jay@test.com",
+      "password": "jay@t123",
+      "id": 3
+    },
+    {
+      "name": "hero Thapa",
+      "email": "jay@test.com",
+      "password": "jay@t123",
+      "id": 4
+    },
+    {
+      "name": "Durga Thapa",
+      "email": "durga@test.com",
+      "password": "durga@123",
+      "id": 5
+    },
+    {
+      "name": "ok",
+      "email": "ok",
+      "password": "ok",
+      "id": 6
+    },
+    {
+      "name": "bg",
+      "email": "bg",
+      "password": "bg",
+      "id": 7
+    },
+    {
+      "name": "Dhan Bahadur Thapa",
+      "email": "dhan@test.com",
+      "password": "dhan@123",
+      "id": 8
+    }
+  ]
+}
