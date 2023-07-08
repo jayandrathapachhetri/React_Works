@@ -1,17 +1,17 @@
 // import './App.css';
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
-import { Link , useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../App.css";
 
 function Header() {
-  const user = JSON.parse(localStorage.getItem('user-info'));
-  console.warn(user)
+  const user = JSON.parse(localStorage.getItem("user-info"));
+  console.warn(user);
 
   const navigate = useNavigate();
-  function logout(){
-    // localStorage.removeItem('user-info');
-    localStorage.clear();
-    navigate('register')
+  function logout() {
+    localStorage.removeItem('user-info');
+    // localStorage.clear();
+    navigate("/login");
   }
   return (
     <div className="Header">
@@ -21,25 +21,33 @@ function Header() {
           {localStorage.getItem("user-info") ? (
             <>
               {/* <Link to="/">Home</Link> */}
-              <Link to="add">AddIntern</Link>
+              <Link to="/add">AddIntern</Link>
             </>
           ) : (
             <>
-              <Link to="login">logIn</Link>
-              <Link to="register">Register</Link>
+              <Link to="/login">logIn</Link>
+              <Link to="/register">Register</Link>
             </>
           )}
         </Nav>
-            {/* <NavDropdown title={user.name}>
+
+        {localStorage.getItem("user-info") ? (
+          <Nav>
+            <NavDropdown title={user && user.name} style={{marginRight:'100px'}}>
               <NavDropdown.Item onClick={logout}>logout</NavDropdown.Item>
               <NavDropdown.Item>Profile</NavDropdown.Item>
-            </NavDropdown> */}
-            {user && user.name && (
-          <NavDropdown title={user.name}>
-            <NavDropdown.Item onClick={logout}>logout</NavDropdown.Item>
-            <NavDropdown.Item>Profile</NavDropdown.Item>
-          </NavDropdown>
-        )}
+            </NavDropdown>
+          </Nav>
+        ) : null}
+
+        {/* <Nav>
+          {user && user.name && (
+            <NavDropdown title={user.name}>
+              <NavDropdown.Item onClick={logout}>logout</NavDropdown.Item>
+              <NavDropdown.Item>Profile</NavDropdown.Item>
+            </NavDropdown>
+          )}
+        </Nav> */}
       </Navbar>
     </div>
   );
