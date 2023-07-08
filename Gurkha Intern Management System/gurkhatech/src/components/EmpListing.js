@@ -59,7 +59,7 @@ const EmpListing = () => {
     <div className="container">
       <div className="card">
         <div className="card-title">
-          <h2>Employee Listing</h2>
+          <h2>Intern Listing</h2>
         </div>
         <div className="card-body">
           <div className="divbtn">
@@ -76,9 +76,9 @@ const EmpListing = () => {
                 <td>Email</td>
                 <td>Phone</td>
                 <td>College</td>
-                <td>Abcdef</td>
-                <td>Ghijkl</td>
-                <td>Mnopqr</td>
+                <td>Role</td>
+                <td>Joining Date</td>
+                <td>Leaving Date</td>
                 <td>Action</td>
               </tr>
             </thead>
@@ -88,14 +88,12 @@ const EmpListing = () => {
                   <tr key={item.id}>
                     <td>{item.id}</td>
                     <td>{item.name}</td>
-                    {/* <td><img src={Image} alt={""} /></td> */}
                     <td>{item.email}</td>
                     <td>{item.phone}</td>
                     <td>{item.college}</td>
-                    <td>{item.Abcdef}</td>
-                    <td>{item.Ghijkl}</td>
-                    <td>{item.Mnopqr}</td>
-                    {/* <td>{item.college}</td> */}
+                    <td>{item.role}</td>
+                    <td>{item.startofdate}</td>
+                    <td>{item.endofdate}</td>
                     <td>
                       <a
                         href={"employee/edit/"+item.id}

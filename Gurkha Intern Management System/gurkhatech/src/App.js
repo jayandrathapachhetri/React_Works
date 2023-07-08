@@ -3,9 +3,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Home from "./components/Home";
-import Addintern from "./components/Addintern";
+import InternDetail from "./components/InternDetail";
 import Protected from "./components/Protected";
-// import './App.css';
+import './App.css';
+import EmpListing from './components/EmpListing';
+import EmpCreate from './components/EmpCreate';
+import EmpDetail from './components/EmpDetail';
+import EmpEdit from './components/EmpEdit';
 
 
 function App() {
@@ -16,7 +20,12 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/add" element={<Protected Component ={Addintern} />} />
+          <Route path="/add" element={<Protected Component ={InternDetail} />} />
+
+          <Route path='/emplist' element={<Protected Component ={EmpListing}/>} />
+          <Route path='/employee/create' element={<EmpCreate />} />
+          <Route path='/employee/detail/:empid' element={<EmpDetail />} /> 
+          <Route path='/employee/edit/:empid' element={<EmpEdit />} />
         </Routes>
       </BrowserRouter>
     </div>

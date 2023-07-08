@@ -37,13 +37,15 @@ const EmpDetail = () => {
           {empdata && (
             <div>
               <h2>
-                The Employee name is : <b>{empdata.name}</b> ({empdata.id})
+                The Intern name is : <b>{empdata.name}</b> ({empdata.id})
               </h2>
               <h3>Contact Details</h3>
               <h5>Email is : {empdata.email}</h5>
               <h5>Phone is : {empdata.phone}</h5>
               <h5>College is : {empdata.college}</h5>
-              {/* <h5>image is : {empdata.image}</h5> */}
+              <h5>Role is : {empdata.role}</h5>
+              <h5>Joining Date is : {empdata.startofdate}</h5>
+              <h5>Leaving Date is : {empdata.endofdate}</h5>
               <Link className="btn btn-danger" to="/emplist">
                 Back to Listing
               </Link>

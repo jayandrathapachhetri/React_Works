@@ -9,6 +9,9 @@ const EmpCreate = () => {
   const [email, emailchange] = useState("");
   const [phone, phonechange] = useState("");
   const [college, collegechange] = useState("");
+  const [role, rolechange] = useState("");
+  const [startofdate, startofdatechange] = useState("");
+  const [endofdate, endofdatechange] = useState("");
   const [active, activechange] = useState(true);
   const [namevalidation, valnamechange] = useState(false);
   const [emailvalidation, valemailchange] = useState(false);
@@ -17,7 +20,7 @@ const EmpCreate = () => {
 
   const handlesubmit = (e) => {
     e.preventDefault();
-    const empdata = { name, email, phone, college, active };
+    const empdata = { name, email, phone, college, role, startofdate, endofdate, active };
 
     fetch("http://localhost:3000/employee_details", {
       method: "POST",
@@ -41,7 +44,7 @@ const EmpCreate = () => {
           <form className="container" onSubmit={handlesubmit}>
             <div className="card" style={{ textAlign: "left" }}>
               <div className="card-title">
-                <h2>Employee Create</h2>
+                <h2>Intern Create</h2>
               </div>
               <div className="card-body">
                 <div className="row">
@@ -102,6 +105,38 @@ const EmpCreate = () => {
                       <input
                         value={college}
                         onChange={(e) => collegechange(e.target.value)}
+                        className="form-control"
+                      ></input>
+                    </div>
+                  </div>
+                  <div className="col-lg-12">
+                    <div className="form-group">
+                      <label>Role</label>
+                      <input
+                        value={role}
+                        onChange={(e) => rolechange(e.target.value)}
+                        className="form-control"
+                      ></input>
+                    </div>
+
+                  </div>
+                  <div className="col-lg-12">
+                    <div className="form-group">
+                      <label>Joining Date</label>
+                      <input
+                        value={startofdate}
+                        onChange={(e) => startofdatechange(e.target.value)}
+                        className="form-control"
+                      ></input>
+                    </div>
+
+                  </div>
+                  <div className="col-lg-12">
+                    <div className="form-group">
+                      <label>Leaving Date</label>
+                      <input
+                        value={endofdate}
+                        onChange={(e) => endofdatechange(e.target.value)}
                         className="form-control"
                       ></input>
                     </div>

@@ -89,6 +89,121 @@
       "email": "suresh@test.com",
       "password": "suresh@123",
       "id": 15
+    },
+    {
+      "name": "xxx",
+      "email": "dd",
+      "password": "vv",
+      "id": 16
+    }
+  ],
+  "login": [
+    {
+      "email": "jay@test.com",
+      "password": "jay@123",
+      "id": 1
+    },
+    {
+      "email": "hari@test.com",
+      "password": "hari@123",
+      "id": 2
+    },
+    {
+      "email": "durga@test.com",
+      "password": "durga@123",
+      "id": 3
+    },
+    {
+      "email": "jay@test.com",
+      "password": "jay@123",
+      "id": 4
+    },
+    {
+      "email": "okya",
+      "password": "okya",
+      "id": 5
+    },
+    {
+      "email": "hari@test.com",
+      "password": "hari@123",
+      "id": 6
+    },
+    {
+      "email": "bikash@test.com",
+      "password": "bikash@123",
+      "id": 7
+    },
+    {
+      "email": "ramesh@test.com",
+      "password": "ramesh@123",
+      "id": 8
+    },
+    {
+      "email": "ramesh@test",
+      "password": "ramesh@123",
+      "id": 9
+    },
+    {
+      "email": "ramesh@test",
+      "password": "ramesh@123",
+      "id": 10
+    },
+    {
+      "email": "ramesh@test",
+      "password": "ramesh@123",
+      "id": 11
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 12
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 13
+    },
+    {
+      "email": "dd",
+      "password": "ff",
+      "id": 14
+    },
+    {
+      "email": "123",
+      "password": "123",
+      "id": 15
+    },
+    {
+      "email": "suren",
+      "password": "suren",
+      "id": 16
+    },
+    {
+      "email": "suren",
+      "password": "suren",
+      "id": 17
+    },
+    {
+      "email": "xx",
+      "password": "ddd",
+      "id": 18
+    },
+    {
+      "email": "dd",
+      "password": "ss",
+      "id": 19
+    }
+  ],
+  "employee_details":[
+    {
+      "name": "Jay Thapa",
+      "email": "jay@test.com",
+      "phone": "9863467790",
+      "college": "ACHS",
+      "role": "Frontend",
+      "startofdate": "2080/02/01",
+      "startofend": "-",
+      "id": 1
     }
   ]
 }

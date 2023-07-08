@@ -346,49 +346,28 @@
       "email": "",
       "password": "",
       "id": 45
+    },
+    {
+      "email": "d",
+      "password": "ff",
+      "id": 46
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 47
     }
   ],
   "employee_details": [
     {
-      "id": 1,
-      "name": "Jayandra Thapa",
+      "id": 8,
+      "name": "Jay Thapa",
       "email": "jay@test.com",
-      "phone": "98181730",
-      "active": true
-    },
-    {
-      "name": "Surendra Thapa",
-      "email": "surendrathapa@test.com",
-      "phone": "9861882726",
-      "active": true,
-      "id": 2
-    },
-    {
-      "name": "hahs",
-      "email": "ddddee",
-      "phone": "eee",
-      "active": true,
-      "id": 4
-    },
-    {
-      "name": "mnnn",
-      "email": "mmnnn",
-      "phone": "mnnnn",
-      "active": true,
-      "id": 5
-    },
-    {
-      "id": 6,
-      "name": "sita",
-      "email": "ssjdjf",
-      "phone": "98632545"
-    },
-    {
-      "name": "dd",
-      "email": "dd",
-      "phone": "dd",
-      "active": true,
-      "id": 7
+      "phone": "9863467790",
+      "college": "ACHS",
+      "role": "Frontend",
+      "startofdate": "2080/02/02",
+      "endofdate": "2080/05/02"
     }
   ]
 }

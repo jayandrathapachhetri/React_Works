@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import Header from "./Header";
+
 // import ImageGallery from './components/ImageGallery';
 
 
@@ -18,7 +20,7 @@ const EmpEdit = () => {
         namechange(resp.name);
         emailchange(resp.email);
         phonechange(resp.phone);
-        // imagechange(resp.image);
+        collegechange(resp.image);
         activechange(resp.isactive);
       })
       .catch((err) => {
@@ -30,7 +32,7 @@ const EmpEdit = () => {
   const [name, namechange] = useState("");
   const [email, emailchange] = useState("");
   const [phone, phonechange] = useState("");
-  // const [image, imagechange] = useState("");
+  const [college, collegechange] = useState("");
   const [active, activechange] = useState(true);
   const [namevalidation, valnamechange] = useState(false);
   const [emailvalidation, valemailchange] = useState(false);
@@ -39,7 +41,7 @@ const EmpEdit = () => {
 
   const handlesubmit = (e) => {
     e.preventDefault();
-    const empdata = { id, name, email, phone, active };
+    const empdata = { id, name, email, phone, college, active };
 
     fetch("http://localhost:3000/employee_details/"+empid, {
       method: "PUT",
@@ -56,6 +58,7 @@ const EmpEdit = () => {
   };
   return (
     <div>
+      <Header />
       <div className="row">
         <div className="offset-lg-3 col-lg-6">
           <form className="container" onSubmit={handlesubmit}>
@@ -117,6 +120,17 @@ const EmpEdit = () => {
                       <label>Phone</label>
                       <input
                         value={phone}
+                        onChange={(e) => phonechange(e.target.value)}
+                        className="form-control"
+                      ></input>
+                    </div>
+                  </div>
+
+                  <div className="col-lg-12">
+                    <div className="form-group">
+                      <label>College</label>
+                      <input
+                        value={college}
                         onChange={(e) => phonechange(e.target.value)}
                         className="form-control"
                       ></input>
