@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 
 function App() {
-  let curDate = new Date(2020, 6, 6 , 36); // Year Month Day Hours
+  let curDate = new Date(2020, 6, 6 , 4); // Year Month Day Hours
   curDate = curDate.getHours() ;
   let greeting = '';
   const cssStyle = { };
