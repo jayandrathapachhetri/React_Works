@@ -12,14 +12,23 @@ export default function Textform(props) {
     // console.log("Uppercase was clicked");
     let newText = text.toUpperCase();
     setText(newText)
-}
+  }
+
+  const handleLoClick = () => {
+    // console.log("Lowercase was clicked");
+    let newText = text.toLowerCase();
+    setText(newText)
+  }
+
+
   return (
     <>
     <div className="container">
       <h1>{props.heading}</h1>
       <div className="mb-3">
         <textarea className="form-control" value={text} onChange={handleOnChange} id='myBox' rows="8"></textarea>
-        <button className="btn btn-primary" onClick={handleUpClick} >Convert to Uppercase</button>
+        <button className="btn btn-primary mx-1" onClick={handleUpClick} >Convert to Uppercase</button>
+        <button className="btn btn-primary mx-1" onClick={handleLoClick} >Convert to Lowercase</button>
       </div>
     </div>
     <div className="container my-3">
