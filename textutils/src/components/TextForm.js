@@ -70,6 +70,10 @@ export default function Textform(props) {
     setEditing(false);
   };
 
+  const handleClearClick = () => {
+    setText("");
+  };
+
   return (
     <>
       <div className="container">
@@ -90,6 +94,9 @@ export default function Textform(props) {
             <>
               <button className="btn btn-primary mx-1 my-2" onClick={handleSaveClick}>
                 Save
+              </button>
+              <button className="btn btn-primary mx-1" onClick={handleClearClick}>
+                Clear
               </button>
             </>
           ) : (
