@@ -38,18 +38,18 @@ export default function Textform(props) {
 
   return (
     <>
-    <div className="container" style={{color: props.mode==='dark'?'white':'#042743'}}>
+    <div className="container" style={{color: props.mode==='dark'?'white':'#153003'}}>
       <h1>{props.heading}</h1>
       <div className="mb-3">
-        <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'grey':'white', color: props.mode==='dark'?'white':'#042743'}} id='myBox' rows="8"></textarea>
-        <button className="btn btn-primary mx-1 my-2" onClick={handleUpClick} >Convert to Uppercase</button>
-        <button className="btn btn-primary mx-1" onClick={handleLoClick} >Convert to Lowercase</button>
-        <button className="btn btn-primary mx-1" onClick={handleExtraSpaces}> Remove extra spaces</button>
-        <button className="btn btn-primary mx-1" onClick={handleCopy}>Copy Text</button>
-        <button className="btn btn-primary mx-1" onClick={handleClearClick}>Clear Text</button>
+        <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'grey':'white', color: props.mode==='dark'?'white':'#153003'}} id='myBox' rows="8"></textarea>
+        <button className="btn btn-success mx-1 my-2" onClick={handleUpClick} >Convert to Uppercase</button>
+        <button className="btn btn-success mx-1" onClick={handleLoClick} >Convert to Lowercase</button>
+        <button className="btn btn-success mx-1" onClick={handleExtraSpaces}> Remove extra spaces</button>
+        <button className="btn btn-success mx-1" onClick={handleCopy}>Copy Text</button>
+        <button className="btn btn-success mx-1" onClick={handleClearClick}>Clear Text</button>
       </div>
     </div>
-    <div className="container my-3" style={{color: props.mode==='dark'?'white':'#042743'}}>
+    <div className="container my-3" style={{color: props.mode==='dark'?'white':'#153003'}}>
         <h2>Your text Summary</h2>
         <p>{text.split(" ").length} words and {text.length} characters</p>
         <p>{0.008 * text.split(" ").length} Minutes read</p>
