@@ -2,7 +2,9 @@ import "./App.css";
 import Navbar from "./Navbar.js";
 import Alert from "./components/Alert";
 import TextForm from "./components/TextForm";
+import About from "./components/About";
 import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -11,12 +13,12 @@ function App() {
   const showAlert = (message, type) => {
     setAlert({
       msg: message,
-      Type: type
+      Type: type,
     });
     setTimeout(() => {
       setAlert(null);
-  }, 1000);
-}
+    }, 1000);
+  };
 
   const toggleMode = () => {
     if (mode === "light") {
@@ -32,20 +34,35 @@ function App() {
     }
   };
 
-
   return (
     <div className="App">
       {/* <Navbar title="TextUtils" aboutText="About TextUtils"/> */}
+      <Router>
       <Navbar
         title="TextUtils"
-        aboutText="About TextUtils"
+        // aboutText="About TextUtils"
         mode={mode}
         toggleMode={toggleMode}
       />
       <Alert alert={alert} />
       <div className="container my-3">
-        <TextForm heading="Enter the text to analyze below" mode={mode} showAlert={showAlert} />
+       
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <TextForm
+                  heading="Enter the text to analyze below"
+                  mode={mode}
+                  showAlert={showAlert}
+                />
+              }
+            />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        
       </div>
+      </Router>
     </div>
   );
 }
