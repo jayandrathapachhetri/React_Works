@@ -95,6 +95,12 @@
       "email": "dd",
       "password": "vv",
       "id": 16
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 17
     }
   ],
   "login": [
@@ -192,9 +198,24 @@
       "email": "dd",
       "password": "ss",
       "id": 19
+    },
+    {
+      "email": "dd",
+      "password": "dd",
+      "id": 20
+    },
+    {
+      "email": "dd",
+      "password": "cc",
+      "id": 21
+    },
+    {
+      "email": "gtd",
+      "password": "hhdg",
+      "id": 22
     }
   ],
-  "employee_details":[
+  "employee_details": [
     {
       "name": "Jay Thapa",
       "email": "jay@test.com",
@@ -204,6 +225,17 @@
       "startofdate": "2080/02/01",
       "startofend": "-",
       "id": 1
+    },
+    {
+      "name": "Surendra Thapa",
+      "email": "surendra@test.com",
+      "phone": "9861658245",
+      "college": "Holyland college",
+      "role": "Backend",
+      "startofdate": "2080-2-01",
+      "endofdate": "-",
+      "active": true,
+      "id": 2
     }
   ]
 }
