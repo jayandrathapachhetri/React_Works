@@ -22,11 +22,32 @@ export default function Textform(props) {
     props.showAlert("Converted to lowercase!", "success");
   }
 
+  const capitalizeFirstWord = () => {
+    let newText = text.toLowerCase();
+  
+    // Split the text into sentences using regular expressions
+    newText = newText.replace(/([.?!]|[\r\n]+)\s*(?=[A-Za-z])/g, "$1|").split("|");
+  
+    // Capitalize the first letter of each sentence
+    newText = newText.map((sentence) => {
+      return sentence.charAt(0).toUpperCase() + sentence.slice(1);
+    });
+  
+    // Join the sentences back together
+    newText = newText.join(" ");
+  
+    setText(newText);
+    props.showAlert("First letter of each sentence capitalized!", "success");
+  };
+  
+  
+
   const handleCopy = () => {
-        var text = document.getElementById("myBox");
-        text.select();
-        navigator.clipboard.writeText(text.value);
-        document.getSelection().removeAllRanges();
+        // var text = document.getElementById("myBox");
+        // text.select();
+        // navigator.clipboard.writeText(text.value);
+        // document.getSelection().removeAllRanges();
+        navigator.clipboard.writeText(text); //No more code needed
         props.showAlert("Copied to clipboard!", "success");
     } 
     
@@ -50,6 +71,7 @@ export default function Textform(props) {
         <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'darkolivegreen':'white', color: props.mode==='dark'?'white':'#153003'}} id='myBox' rows="8"></textarea>
         <button className="btn btn-success mx-1 my-2" disabled={text.length===0} onClick={handleUpClick} >Convert to Uppercase</button>
         <button className="btn btn-success mx-1 my-2" disabled={text.length===0} onClick={handleLoClick} >Convert to Lowercase</button>
+        <button className="btn btn-success mx-1 my-2" disabled={text.length===0} onClick={capitalizeFirstWord} >Capitalize FirstWord</button>
         <button className="btn btn-success mx-1 my-2" disabled={text.length===0} onClick={handleExtraSpaces}> Remove extra spaces</button>
         <button className="btn btn-success mx-1 my-2" disabled={text.length===0} onClick={handleCopy}>Copy Text</button>
         <button className="btn btn-success mx-1 my-2 " disabled={text.length===0}  onClick={handleClearClick}>Clear Text</button>
@@ -61,7 +83,6 @@ export default function Textform(props) {
         <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes read</p>
         <h2>Preview</h2>
         <p>{text.length>0?text:"Nothing to preview!"}</p>
-        {/* <p>{text.trim().length === 0 ? 0 : text.trim().split(" ").length}</p> */}
     </div>
     </>
   );
