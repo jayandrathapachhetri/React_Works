@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./App.css";
+import "../App.css";
 
 function Navbar(props) {
   return (
@@ -17,7 +17,7 @@ function Navbar(props) {
                             <Link className="nav-link" aria-current="page" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-links" to="/about">About</Link>
+                            <Link className="nav-link" to="/about">About</Link>
                         </li>
                     </ul>
                     {/* <form className="d-flex">

@@ -1,5 +1,5 @@
 import "./App.css";
-import Navbar from "./Navbar.js";
+import Navbar from "./components/Navbar.js";
 import Alert from "./components/Alert";
 import TextForm from "./components/TextForm";
 import About from "./components/About";
@@ -58,7 +58,7 @@ function App() {
                 />
               }
             />
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={<About mode={mode}/>} />
           </Routes>
         
       </div>
