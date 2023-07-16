@@ -29,16 +29,8 @@ function Register() {
     });
     result = await result.json();
     console.warn("result", result);
-    // localStorage.setItem("user-info", JSON.stringify(result));
-    // navigate('/add')
-    if (result.status === 201) {
-      alert("Sign Up Done")
-      localStorage.setItem("user-info", JSON.stringify(result.data))
-      //redirect to Home page
-      this.$router.push({
-          name: 'HomePage'
-      })
-  }
+    localStorage.setItem("user-info", JSON.stringify(result));
+    navigate('/add');
   }
 
   return (
