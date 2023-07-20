@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from "react";
+// import { useNavigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 
 function Register() {
+  
+  const navigate = useNavigate();
+
   useEffect(()=>{
     if(localStorage.getItem('user-info')){
       // eslint-disable-next-line react-hooks/exhaustive-deps
       navigate('/add');
     }
-  },[])
+  },[navigate])
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const navigate = useNavigate();
+  
 
   async function signUP() {
     let item = { name, email, password };

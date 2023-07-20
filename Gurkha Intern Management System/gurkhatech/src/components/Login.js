@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Header from "./Header";
 
 function Login() {
+  const navigate = useNavigate();
+
   useEffect(() => {
     if (localStorage.getItem("user-info")) {
       navigate("/add");
     }
-  }, []);
+  }, [navigate]);
+  
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const navigate = useNavigate();
+  
   async function login() {
     console.warn('data', email, password);
     let item = { email, password };
@@ -64,13 +67,14 @@ function Login() {
                 className="form-control rounded-0"
               />
             </div>
-            <button
+            <button 
               type="button"
               onClick={login}
-              className="btn btn-success w-100 rounded-0"
+              className="btn btn-success w-100 rounded-0 mb-3"
             >
               LogIn
             </button>
+            <p className="text-decoration-none">Don't have an account? <Link to="/register">Register</Link></p>
           </form>
         </div>
       </div>
@@ -79,3 +83,5 @@ function Login() {
 }
 
 export default Login;
+
+
