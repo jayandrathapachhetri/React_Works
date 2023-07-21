@@ -1,7 +1,12 @@
 import React from 'react'
 
 
-export const Footer = () => { 
+function Footer(){ 
+    let footerStyle = {
+        position: "absolute",
+        top: "90vh",
+        width: "100%"
+    }
     return (
         <footer className="bg-dark text-light py-3">
             <p className="text-center">
@@ -10,3 +15,10 @@ export const Footer = () => {
         </footer>
     )
 }
+
+export default Footer;
+
+
+
+
+
