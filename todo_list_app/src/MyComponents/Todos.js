@@ -1,21 +1,43 @@
-import React from 'react'
-import {TodoItem} from "./TodoItem";
+import React, {useState} from 'react';
+import TodoItem from './TodoItem';
 
-export const Todos = (props) => {
-    let myStyle = {
-        minHeight: "70vh",
-        margin: "40px auto"
-    }
-    return (
-        <div className="container" style={myStyle}>
-            <h3 className="my-3">Todos List</h3>
-            {props.todos.length===0? "No Todos to display":  
-            props.todos.map((todo)=>{
-                console.log(todo.sno);
-                return (<TodoItem todo={todo} key={todo.sno} onDelete={props.onDelete}/>   
-                )
-            })
-              } 
-        </div>
-    )
+
+function Todos() {
+  const [todo, setTodo] = useState([
+    {
+      sno: 1,
+      title: "Learn reactjs and redux in depth.",
+      desc: "I will learn the basics of Redux by building a ToDo app using it.",
+    },
+    {
+      sno: 2,
+      title: "Build a portfolio website.",
+      desc: "I will showcase my projects and skills on the portfolio website.",
+    },
+    {
+      sno: 3,
+      title: "Exercise and stay healthy.",
+      desc: "I will do regular workouts and eat a balanced diet to stay fit.",
+    },
+  ]);
+
+  const onDelete = (todos)=>{
+    console.log("i am delete", todos);
+    setTodo(todo.filter((item)=> 
+    {return item!== todos }));
+  }
+
+  return (
+    <>
+      <div className="container">
+        <h2 className='text-center my-3'>Todo List</h2>
+        {todo.length === 0 ? "No todo to display" : todo.map((todos) => (
+          <TodoItem key={todos.sno} Todo={todos} onDelete={onDelete} />
+        ))}
+      </div>
+    </>
+  );
 }
+
+export default Todos;
+
