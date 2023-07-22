@@ -22,7 +22,7 @@ export const AddTodo = ({addTodo}) => {
       <form onSubmit={submit}>
         <div className="mb-3">
           <label htmlFor="title" className="form-label">Todo Title</label>
-          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} className="form-control" id="title" aria-describedby="emailHelp" />
+          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} className="form-control" id="title" aria-describedby="emailHelp" /> <br />
         </div>
         <div className="mb-3">
           <label htmlFor="desc" className="form-label">Todo Description</label>

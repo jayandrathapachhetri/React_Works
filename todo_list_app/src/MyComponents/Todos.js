@@ -1,26 +1,18 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import TodoItem from './TodoItem';
 import { AddTodo } from "./AddTodo";
 
 
 function Todos() {
-  const [todo, setTodo] = useState([
-    {
-      sno: 1,
-      title: "Learn reactjs and redux in depth.",
-      desc: "I will learn the basics of Redux by building a ToDo app using it.",
-    },
-    {
-      sno: 2,
-      title: "Build a portfolio website.",
-      desc: "I will showcase my projects and skills on the portfolio website.",
-    },
-    {
-      sno: 3,
-      title: "Exercise and stay healthy.",
-      desc: "I will do regular workouts and eat a balanced diet to stay fit.",
-    },
-  ]);
+  let initTodo;
+  if (localStorage.getItem("todo") === null) {
+    initTodo = [];
+  }
+  else {
+    initTodo = JSON.parse(localStorage.getItem("todo"));
+  }
+
+  const [todo, setTodo] = useState(initTodo);
 
   const addTodo = (title, desc) => {
     console.log("I am adding this todo", title, desc);
@@ -45,16 +37,23 @@ function Todos() {
     console.log("i am delete", todos);
     setTodo(todo.filter((item)=> 
     {return item!== todos }));
+
+    localStorage.setItem("todo", JSON.stringify(todo));
   }
+
+  useEffect(() => {
+    localStorage.setItem("todo", JSON.stringify(todo));
+  }, [todo])
 
   return (
     <>
       <div className="container">
-        <h2 className='text-center my-3'>Todo List</h2>
+        
         <AddTodo addTodo={addTodo} />
+        <h4 className='mt-4'>Todo List</h4>
         {todo.length === 0 ? "No todo to display" : todo.map((todos) => (
-          <TodoItem key={todos.sno} Todo={todos} onDelete={onDelete} />
-        ))}
+          <TodoItem key={todos.sno} Todo={todos} onDelete={onDelete} /> 
+        ))} 
       </div>
     </>
   );
