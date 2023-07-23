@@ -14,11 +14,6 @@ import {
 
 function App() {
   return (
-    // <div className="App">
-    //   <Header title="Todo List" searchBar={true} />
-    //   <Todos/>
-    //   <Footer />
-    // </div>
     <>
     <Router>
       <Header title="Todos List" searchBar={true} /> 
