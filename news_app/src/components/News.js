@@ -1,7 +1,19 @@
 import React, { Component } from "react";
 import NewsItem from "./NewsItem";
+import Spinner from "./Spinner";
+import PropTypes from 'prop-types'
 
 export class News extends Component {
+  static defaultProps = {
+    pageSize:5,
+    country: 'in',
+  }
+  
+  static propTypes = {
+    pageSize : PropTypes.number ,
+    country : PropTypes.string,
+  }
+
   constructor(props) {
     super();
     this.state = {
@@ -15,12 +27,14 @@ export class News extends Component {
   async componentDidMount() {
     let url =
       `https://newsapi.org/v2/top-headlines?country=us&apiKey=f31ca37e0d664a5b87ffa95ec0b79dd4&page=1&pageSize=${this.props.pageSize}`;
+      this.setState({loading: true});
     let data = await fetch(url);
     let parsedData = await data.json();
     console.log(parsedData);
     this.setState({
       articles: parsedData.articles,
       totalArticles: parsedData.totalResults, // Set the totalResults from the API response
+      loading:false
     });
   }
 
@@ -29,12 +43,14 @@ export class News extends Component {
     let url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=f31ca37e0d664a5b87ffa95ec0b79dd4&page=${
       this.state.page - 1
     }&pageSize=${this.props.pageSize}`;
+    this.setState({loading: true});
     let data = await fetch(url);
     let parsedData = await data.json();
     console.log(parsedData);
     this.setState({
       page: this.state.page - 1,
       articles: parsedData.articles,
+      loading:false
     });
   };
   
@@ -44,15 +60,17 @@ export class News extends Component {
       // Handle the case when there are no more pages to fetch
       return;
     } else {
-      let url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=f31ca37e0d664a5b87ffa95ec0b79dd4&page=${
+      let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=f31ca37e0d664a5b87ffa95ec0b79dd4&page=${
         this.state.page + 1
       }&pageSize=${this.props.pageSize}`;
+      this.setState({loading: true});
       let data = await fetch(url);
       let parsedData = await data.json();
       console.log(parsedData);
       this.setState({
         page: this.state.page + 1,
         articles: parsedData.articles,
+        loading:false
       });
     }
   };
@@ -61,9 +79,12 @@ export class News extends Component {
   render() {
     return (
       <div className="container my-3">
-        <h2>Amazing News</h2>
+        <h2 className="text-center" style={{margin: '30px 0px'}} >Amazing News</h2>
+       <div className="text-center">
+       {this.state.loading && <Spinner/>}
+       </div>
         <div className="row">
-          {this.state.articles.map((element) => {
+          {!this.state.loading && this.state.articles.map((element) => {
             return (
               <div className="col-md-4" key={element.url}>
                 <NewsItem
@@ -100,3 +121,5 @@ export class News extends Component {
 }
 
 export default News;
+
+
