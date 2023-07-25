@@ -11,7 +11,7 @@ export class App extends Component {
       <div>
         <Navbar/>
         {/* <Spinner/> */}
-        <News pageSize={5} country="in"/>
+        <News pageSize={5} country="in" category="science"/>
 
       </div>
     )
