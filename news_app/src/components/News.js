@@ -7,11 +7,13 @@ export class News extends Component {
   static defaultProps = {
     pageSize:5,
     country: 'in',
+    category:"science"
   }
   
   static propTypes = {
     pageSize : PropTypes.number ,
     country : PropTypes.string,
+    category: PropTypes.string
   }
 
   constructor(props) {
@@ -26,7 +28,7 @@ export class News extends Component {
 
   async componentDidMount() {
     let url =
-      `https://newsapi.org/v2/top-headlines?country=us&apiKey=f31ca37e0d664a5b87ffa95ec0b79dd4&page=1&pageSize=${this.props.pageSize}`;
+      `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=f31ca37e0d664a5b87ffa95ec0b79dd4&page=1&pageSize=${this.props.pageSize}`;
       this.setState({loading: true});
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -40,7 +42,7 @@ export class News extends Component {
 
   handlePrevClick = async () => {
     console.log("Previous");
-    let url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=f31ca37e0d664a5b87ffa95ec0b79dd4&page=${
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=f31ca37e0d664a5b87ffa95ec0b79dd4&page=${
       this.state.page - 1
     }&pageSize=${this.props.pageSize}`;
     this.setState({loading: true});
@@ -60,7 +62,7 @@ export class News extends Component {
       // Handle the case when there are no more pages to fetch
       return;
     } else {
-      let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=f31ca37e0d664a5b87ffa95ec0b79dd4&page=${
+      let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=f31ca37e0d664a5b87ffa95ec0b79dd4&page=${
         this.state.page + 1
       }&pageSize=${this.props.pageSize}`;
       this.setState({loading: true});
