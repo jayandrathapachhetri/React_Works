@@ -1,38 +1,15 @@
 {
   "employee": [
     {
+      "id": 1,
       "name": "Jayandra Thapa",
-      "email": "jay@test.com",
-      "phone": "9863467790",
-      "active": true,
-      "id": 1
-    },
-    {
-      "name": "Surendra Thapa",
-      "email": "surendrathapa@test.com",
-      "phone": "9861882726",
-      "active": true,
-      "id": 2
-    },
-    {
-      "name": "Durga Thapa",
-      "email": "durgathapa@test.com",
-      "phone": "9863451278",
-      "active": true,
-      "id": 3
-    },
-    {
-      "id": 4,
-      "name": "ss",
-      "email": "dddd",
-      "phone": "gggggggggg"
-    },
-    {
-      "name": "ss",
-      "email": "ddd",
-      "phone": "9866",
-      "active": true,
-      "id": 5
+      "email": "jayandrathapa5518@gmail.com",
+      "phone": "9863467730",
+      "college": "ACHS",
+      "address": "Maitidevi",
+      "role": "Frontend",
+      "startofdate": "2080/02/01",
+      "endofdate": "-"
     }
   ]
 }

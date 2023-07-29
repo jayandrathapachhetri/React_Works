@@ -3,7 +3,7 @@ import { Link, useNavigate} from "react-router-dom";
 // import "./App.css";
 
 const EmpListing = () => {
-  const [empdata, empdatachange] = useState(null);
+  const [empdata, empdatachange] = useState([]);
   const navigate = useNavigate();
 
   // href is use so no need of navigate 
