@@ -7,9 +7,12 @@ export class NewsItem extends Component {
       <div className="my-3" >
           
         <div className="card">
-        <div style={{display:'flex', justifyContent: 'flex-end', position:'absolute', right:'0'}}>
+        {/* <div style={{display:'flex', justifyContent: 'flex-end', position:'absolute', right:'0'}}>
            <span className="  badge rounded-pill bg-success "> {source} </span>
-           </div> 
+           </div>  */}
+           <div className="d-flex justify-content-end position-absolute right-0">
+  <span className="badge rounded-pill text-primary"> {source} </span>
+</div>
         <img src={!imageUrl?"https://fdn.gsmarena.com/imgroot/news/21/08/xiaomi-smart-home-india-annoucnements/-476x249w4/gsmarena_00.jpg":imageUrl} className="card-img-top" alt="..."/>
           {/* <img src={imageUrl} className="card-img-top" alt="..." /> */}
           <div className="card-body">
