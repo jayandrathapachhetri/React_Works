@@ -1,7 +1,9 @@
 // import './App.css';
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import "../App.css";
+// import "../App.css";
+// import { Nav,NavDropdown } from "react-bootstrap";
+
 
 function Header() {
   const user = JSON.parse(localStorage.getItem("user-info"));
