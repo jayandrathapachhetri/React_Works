@@ -15,7 +15,7 @@ const App = () => {
     return (
       <div>
         <Router>
-   Fscienc     <Navbar/>
+       <Navbar/>
         <LoadingBar
           height={3}
           color='#f11946'
