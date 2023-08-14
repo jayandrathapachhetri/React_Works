@@ -9,7 +9,6 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
-import HeroSection from "./Components/HeroSection";
 
 function App() {
   const theme = {
@@ -38,7 +37,6 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<HeroSection />}></Route>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/service" element={<Service />} />
