@@ -1,0 +1,34 @@
+{
+  "techweb": [
+    {
+      "id": 1,
+      "title": "Web Development",
+      "image": "Images/hero.svg",
+      "description": "A front-end developer is a type of software developer who specializes in creating and designing the user interface (UI) and user experience (UX) of websites ..."
+    },
+    {
+      "id": 2,
+      "title": "Web Development",
+      "image": "Images/hero.svg",
+      "description": "A front-end developer is a type of software developer who specializes in creating and designing the user interface (UI) and user experience (UX) of websites ..."
+    },
+    {
+      "id": 3,
+      "title": "Web Development",
+      "image": "Images/hero.svg",
+      "description": "A front-end developer is a type of software developer who specializes in creating and designing the user interface (UI) and user experience (UX) of websites ..."
+    },
+    {
+      "id": 4,
+      "title": "Web Development",
+      "image": "Images/hero.svg",
+      "description": "A front-end developer is a type of software developer who specializes in creating and designing the user interface (UI) and user experience (UX) of websites ..."
+    },
+    {
+      "id": 5,
+      "title": "Web Development",
+      "image": "Images/hero.svg",
+      "description": "A front-end developer is a type of software developer who specializes in creating and designing the user interface (UI) and user experience (UX) of websites ..."
+    }
+  ]
+}

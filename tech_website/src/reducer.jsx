@@ -21,7 +21,6 @@ const reducer = (state, action) => {
     //     services: action.payload,
     //   };
     // }
-  
     return state;
   };
   

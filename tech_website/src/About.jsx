@@ -3,9 +3,9 @@ import HeroSection from './Components/HeroSection'
 import { useGlobalContext } from './context'
 
 function About() {
-  const {updateAboutPage} = useGlobalContext();
+  const {udpateAboutPage} = useGlobalContext();
 
-  useEffect(() => updateAboutPage(), []);
+  useEffect(() => udpateAboutPage(), []);
 
   return (
     <div>

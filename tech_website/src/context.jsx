@@ -25,7 +25,7 @@ const AppProvider = ({ children }) => {
     });
   };
 
-  const updateAboutPage = () => {
+  const udpateAboutPage = () => {
     return dispatch({
       type: "ABOUT_UPDATE",
       payload: {
@@ -37,7 +37,7 @@ const AppProvider = ({ children }) => {
 
 
   return (
-    <AppContext.Provider value = {{...state, updateHomePage, updateAboutPage}}>
+    <AppContext.Provider value = {{...state, updateHomePage, udpateAboutPage}}>
       {children}
     </AppContext.Provider>
   );
