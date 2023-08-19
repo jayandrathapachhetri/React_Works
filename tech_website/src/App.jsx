@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
+import Error from "./Error";
 // import ServiceInfo from "./ServiceInfo";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./Components/Header";
@@ -42,6 +43,7 @@ function App() {
           <Route exact path="/about" element={<About />} />
           <Route exact path="/services" element={<ServiceInfo />} />
           <Route exact path="/contact" element={<Contact />} />
+          <Route path="*" element={<Error />} />
         </Routes>
         <Footer />
       </BrowserRouter>
