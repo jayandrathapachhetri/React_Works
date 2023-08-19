@@ -52,11 +52,6 @@ function Navbar() {
               Contact
             </NavLink>
           </li>
-          <li>
-            <NavLink className="navbar-link" to="*">
-              Error
-            </NavLink>
-          </li>
         </ul>
       </div>
     </Nav>

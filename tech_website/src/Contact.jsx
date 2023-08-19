@@ -43,7 +43,6 @@ function Contact() {
         style={{ border: 0 }}
         allowFullScreen=""
         loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
 
       <div className="container">
@@ -53,14 +52,14 @@ function Contact() {
               type="text"
               name="username"
               placeholder="username"
-              autoComplate="off"
+              autoComplete="off"
               required
             />
             <input
               type="email"
               name="Email"
               placeholder="Email"
-              autoComplate="off"
+              autoComplete="off"
               required
             />
 
