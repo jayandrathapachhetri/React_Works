@@ -141,7 +141,7 @@ function Services({ name, description, image }) {
         </p>
         {description.length > 100 && (
           <button
-            className="btn btn-sm btn-secondary"
+            className="btn btn-sm btn-secondary btn-lg"
             onClick={toggleDescription}
           >
             {showFullDescription ? "See Less" : "See More"}
