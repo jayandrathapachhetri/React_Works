@@ -60,26 +60,15 @@ const Wrapper = styled.section`
     align-items: center;
     cursor: pointer;
 
-    &--icon {
-      animation: gototop 1.2s linear infinite alternate-reverse;
-    }
-
-    @keyframes gototop {
-      0% {
-        transform: translateY(-0.5rem);
-      }
-      100% {
-        transform: translateY(1rem);
-      }
     }
   }
 
-  @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    .top-btn {
-      right: 0;
-      left: 40%;
-    }
-  }
+//   @media (max-width: ${({ theme }) => theme.media.mobile}) {
+//     .top-btn {
+//       right: 0;
+//       left: 40%;
+//     }
+//   }
 `;
 
 
