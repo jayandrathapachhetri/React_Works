@@ -1,7 +1,3 @@
-// create a context  (warehouse) ✅
-// provider
-// consumer / useContext
-
 import React, { useContext, useReducer } from "react";
 import reducer from "./reducer";
 
@@ -54,4 +50,3 @@ const useGlobalContext = () => {
 };
 
 export { AppContext, AppProvider, useGlobalContext };
-// export { AppProvider, useGlobalContext };

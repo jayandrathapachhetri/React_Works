@@ -4,7 +4,6 @@ import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
 import Error from "./Error";
-// import ServiceInfo from "./ServiceInfo";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
