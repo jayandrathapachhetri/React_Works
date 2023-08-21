@@ -51,7 +51,7 @@ function Navbar() {
             <NavLink className="navbar-link" to="/contact">
               Contact
             </NavLink>
-          </li>
+          </li><footer></footer>
         </ul>
       </div>
     </Nav>
