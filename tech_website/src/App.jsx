@@ -11,6 +11,7 @@ import Footer from "./Components/Footer";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
 import ServiceInfo from "./ServiceInfo";
+import GoToTop from "./Components/GoTOTop";
 
 function App() {
   const theme = {
@@ -45,6 +46,7 @@ function App() {
           <Route exact path="/contact" element={<Contact />} />
           <Route path="*" element={<Error />} />
         </Routes>
+        <GoToTop/>
         <Footer />
       </BrowserRouter>
     </ThemeProvider>
